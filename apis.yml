@@ -1,111 +1,51 @@
+aid: cisco-secure-client
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/cisco-secure-client/refs/heads/main/apis.yml
 name: Cisco Secure Client API
-description: API specifications for Cisco Secure Client (formerly AnyConnect), providing secure remote access, VPN connectivity, and endpoint security management
-image: https://www.cisco.com/c/en/us/products/security/secure-client/index.html
-created: '2024'
-modified: '2024'
-specificationVersion: '0.18'
-url: https://developer.cisco.com/docs/secure-client/
 tags:
-- VPN
-- Security
-- Remote Access
-- Endpoint Security
-- Network Access Control
-- Zero Trust
-apis:
-- name: Cisco Secure Client VPN API
-  description: Programmatic interface for managing VPN connections, profiles, and authentication
-  image: https://www.cisco.com/c/dam/en/us/products/security/secure-client-icon.png
-  humanURL: https://www.cisco.com/c/en/us/support/security/anyconnect-secure-mobility-client/products-programming-reference-guides-list.html
-  baseURL: https://api.cisco.com/secure-client/v1
-  tags:
   - VPN
-  - Authentication
-  - Tunneling
-  properties:
-  - type: Documentation
-    url: https://developer.cisco.com/docs/secure-client/
-  - type: OpenAPI
-    url: https://developer.cisco.com/docs/secure-client/openapi.json
-  - type: Swagger
-    url: https://developer.cisco.com/docs/secure-client/swagger.yaml
-  contact:
-  - FN: Cisco Developer Support
-    email: developer-support@cisco.com
-    url: https://developer.cisco.com/site/support/
-- name: Cisco Secure Client Management API
-  description: API for centralized management, configuration, and deployment of Secure Client across enterprise endpoints
-  humanURL: https://www.cisco.com/c/en/us/support/security/anyconnect-secure-mobility-client/products-installation-and-configuration-guides-list.html
-  baseURL: https://secure-client-manager.cisco.com/api/v1
-  tags:
-  - Management
-  - Configuration
-  - Deployment
-  - Policy
-  properties:
-  - type: Documentation
-    url: https://developer.cisco.com/docs/secure-client/management-api/
-  - type: API Reference
-    url: https://developer.cisco.com/docs/secure-client/management-api/reference/
-  - type: Postman Collection
-    url: https://www.postman.com/cisco-devnet/workspace/cisco-secure-client
-- name: Cisco Secure Client Telemetry API
-  description: Retrieve telemetry data, connection logs, and security posture information from Secure Client endpoints
-  humanURL: https://developer.cisco.com/docs/secure-client/telemetry/
-  baseURL: https://api.cisco.com/secure-client/telemetry/v1
-  tags:
-  - Telemetry
-  - Monitoring
-  - Analytics
-  - Logging
-  properties:
-  - type: Documentation
-    url: https://developer.cisco.com/docs/secure-client/telemetry/
-  - type: API Guide
-    url: https://developer.cisco.com/docs/secure-client/telemetry/guide/
-- name: Cisco Secure Client Posture Assessment API
-  description: API for endpoint compliance checking and posture assessment integration
-  humanURL: https://developer.cisco.com/docs/secure-client/posture/
-  baseURL: https://api.cisco.com/secure-client/posture/v1
-  tags:
-  - Posture
-  - Compliance
+  - Security
+  - Remote Access
   - Endpoint Security
-  - NAC
-  properties:
-  - type: Documentation
-    url: https://developer.cisco.com/docs/secure-client/posture/
-  - type: SDK
-    url: https://github.com/cisco/secure-client-posture-sdk
-maintainers:
-- FN: Cisco Security Business Group
-  email: secure-client-support@cisco.com
-  url: https://www.cisco.com/c/en/us/support/security/index.html
+  - Zero Trust
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+access: 3rd-Party
+created: '2024-01-01'
+modified: '2026-03-16'
+position: Consumer
+description: >-
+  API specifications for Cisco Secure Client (formerly AnyConnect), providing
+  secure remote access, VPN connectivity, and endpoint security management.
+apis:
+  - aid: cisco-secure-client:cisco-secure-client-vpn-api
+    name: Cisco Secure Client VPN API
+    tags:
+      - VPN
+      - Security
+    humanURL: https://www.cisco.com/c/en/us/support/security/anyconnect-secure-mobility-client/products-programming-reference-guides-list.html
+    properties:
+      - url: https://developer.cisco.com/docs/secure-client/
+        type: Documentation
+    description: >-
+      Programmatic interface for managing VPN connections, profiles, and
+      authentication with Cisco Secure Client.
 common:
-- type: Developer Portal
-  url: https://developer.cisco.com/
-- type: Authentication
-  url: https://developer.cisco.com/docs/authentication/
-- type: Terms of Service
-  url: https://www.cisco.com/c/en/us/about/legal/cloud-and-software/end-user-license-agreement.html
-- type: Privacy Policy
-  url: https://www.cisco.com/c/en/us/about/legal/privacy-full.html
-- type: Support
-  url: https://www.cisco.com/c/en/us/support/index.html
-- type: Status Page
-  url: https://status.cisco.com/
-- type: SDKs
-  url: https://developer.cisco.com/site/sdks/
-- type: Change Log
-  url: https://developer.cisco.com/docs/secure-client/changelog/
-- type: Getting Started
-  url: https://developer.cisco.com/docs/secure-client/getting-started/
-- type: Rate Limits
-  url: https://developer.cisco.com/docs/rate-limits/
-include:
-- name: Cisco Identity Services Engine (ISE)
-  url: https://developer.cisco.com/docs/identity-services-engine/
-- name: Cisco Duo Security
-  url: https://duo.com/docs/api
-- name: Cisco Umbrella
-  url: https://developer.cisco.com/docs/cloud-security/
+  - type: Portal
+    url: https://developer.cisco.com/
+  - type: Getting Started
+    url: https://developer.cisco.com/docs/secure-client/getting-started/
+  - type: Change Log
+    url: https://developer.cisco.com/docs/secure-client/changelog/
+  - type: Support
+    url: https://www.cisco.com/c/en/us/support/index.html
+  - type: Status
+    url: https://status.cisco.com/
+  - type: Terms of Service
+    url: https://www.cisco.com/c/en/us/about/legal/cloud-and-software/end-user-license-agreement.html
+  - type: Privacy Policy
+    url: https://www.cisco.com/c/en/us/about/legal/privacy-full.html
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
+specificationVersion: '0.19'
