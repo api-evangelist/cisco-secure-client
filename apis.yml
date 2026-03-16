@@ -1,7 +1,7 @@
 aid: cisco-secure-client
 url: >-
   https://raw.githubusercontent.com/api-evangelist/cisco-secure-client/refs/heads/main/apis.yml
-name: Cisco Secure Client API
+name: Cisco Secure Client
 tags:
   - VPN
   - Security
