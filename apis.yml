@@ -3,10 +3,10 @@ url: >-
   https://raw.githubusercontent.com/api-evangelist/cisco-secure-client/refs/heads/main/apis.yml
 name: Cisco Secure Client
 tags:
-  - VPN
-  - Security
-  - Remote Access
   - Endpoint Security
+  - Remote Access
+  - Security
+  - VPN
   - Zero Trust
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
@@ -21,8 +21,8 @@ apis:
   - aid: cisco-secure-client:cisco-secure-client-vpn-api
     name: Cisco Secure Client VPN API
     tags:
-      - VPN
       - Security
+      - VPN
     humanURL: https://www.cisco.com/c/en/us/support/security/anyconnect-secure-mobility-client/products-programming-reference-guides-list.html
     properties:
       - url: https://developer.cisco.com/docs/secure-client/
