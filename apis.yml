@@ -137,9 +137,9 @@ common:
   - type: JSON-LD
     url: json-ld/cisco-secure-client-context.jsonld
   - type: Spectral
-    url: spectral/cisco-secure-client-spectral.yml
+    url: rules/cisco-secure-client-rules.yml
   - type: Naftiko Capabilities
-    url: naftiko/cisco-secure-client-capabilities.yml
+    url: capabilities/cisco-secure-client-capabilities.yml
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

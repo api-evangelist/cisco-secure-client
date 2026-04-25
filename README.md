@@ -97,8 +97,8 @@ The management interface for Cisco's converged SSE platform that Secure Client c
 - [Terms of Service](https://www.cisco.com/c/en/us/about/legal/cloud-and-software/end-user-license-agreement.html)
 - [Privacy Policy](https://www.cisco.com/c/en/us/about/legal/privacy-full.html)
 - [JSON-LD Context](json-ld/cisco-secure-client-context.jsonld)
-- [Spectral Ruleset](spectral/cisco-secure-client-spectral.yml)
-- [Naftiko Capabilities](naftiko/cisco-secure-client-capabilities.yml)
+- [Spectral Ruleset](rules/cisco-secure-client-rules.yml)
+- [Naftiko Capabilities](capabilities/cisco-secure-client-capabilities.yml)
 
 ## Maintainers
 
