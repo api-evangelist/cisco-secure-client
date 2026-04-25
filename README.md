@@ -1,96 +1,107 @@
-# Cisco Secure Client API (cisco-secure-client)
-API specifications for Cisco Secure Client (formerly AnyConnect), providing secure remote access, VPN connectivity, and endpoint security management
+# Cisco Secure Client (cisco-secure-client)
+Cisco Secure Client (formerly AnyConnect) is the unified endpoint agent for Cisco security and connectivity, delivering VPN, Zero Trust Network Access, endpoint posture, network visibility, and secure web access from a single installer. Programmatic interfaces are exposed indirectly through Cisco Secure Firewall, ISE, Secure Access, Umbrella, and Duo.
 
-**URL:** [Visit APIs.json URL](https://developer.cisco.com/docs/secure-client/)
+**URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/cisco-secure-client/refs/heads/main/apis.yml)
+
+## Scope
+
+- **Type:** Index
+- **Position:** Consumer
+- **Access:** 3rd-Party
 
 ## Tags:
 
- - VPN, Security, Remote Access, Endpoint Security, Network Access Control, Zero Trust
+ - Endpoint Security, Remote Access, Security, VPN, Zero Trust
 
 ## Timestamps
 
-- **Created:** 2024 
-- **Modified:** 2024 
+- **Created:** 2024-01-01
+- **Modified:** 2026-04-23
 
 ## APIs
 
-### Cisco Secure Client VPN API
-Programmatic interface for managing VPN connections, profiles, and authentication
+### Cisco Secure Firewall Management Center API
+Configures remote-access VPN gateways, group policies, and Secure Client profiles distributed to endpoints. Authentication uses a token generated via the generatetoken endpoint and passed as the X-auth-access-token header.
 
-**Human URL:** [https://www.cisco.com/c/en/us/support/security/anyconnect-secure-mobility-client/products-programming-reference-guides-list.html](https://www.cisco.com/c/en/us/support/security/anyconnect-secure-mobility-client/products-programming-reference-guides-list.html)
-
-
-#### Tags:
-
- - VPN, Authentication, Tunneling
-
-#### Properties
-
-- [Documentation](https://developer.cisco.com/docs/secure-client/)
-- [OpenAPI](https://developer.cisco.com/docs/secure-client/openapi.json)
-- [Swagger](https://developer.cisco.com/docs/secure-client/swagger.yaml)
-
-### Cisco Secure Client Management API
-API for centralized management, configuration, and deployment of Secure Client across enterprise endpoints
-
-**Human URL:** [https://www.cisco.com/c/en/us/support/security/anyconnect-secure-mobility-client/products-installation-and-configuration-guides-list.html](https://www.cisco.com/c/en/us/support/security/anyconnect-secure-mobility-client/products-installation-and-configuration-guides-list.html)
-
+**Human URL:** [https://developer.cisco.com/docs/secure-firewall-management-center-api/](https://developer.cisco.com/docs/secure-firewall-management-center-api/)
 
 #### Tags:
 
- - Management, Configuration, Deployment, Policy
+ - ASA, Firewall, FTD, Management, VPN
 
 #### Properties
 
-- [Documentation](https://developer.cisco.com/docs/secure-client/management-api/)
-- [API Reference](https://developer.cisco.com/docs/secure-client/management-api/reference/)
-- [Postman Collection](https://www.postman.com/cisco-devnet/workspace/cisco-secure-client)
+- [Documentation](https://developer.cisco.com/docs/secure-firewall-management-center-api/)
 
-### Cisco Secure Client Telemetry API
-Retrieve telemetry data, connection logs, and security posture information from Secure Client endpoints
+### Cisco ISE ERS API
+The External RESTful Services API manages the network access control plane that Secure Client integrates with for posture assessment and policy enforcement.
 
-**Human URL:** [https://developer.cisco.com/docs/secure-client/telemetry/](https://developer.cisco.com/docs/secure-client/telemetry/)
-
+**Human URL:** [https://developer.cisco.com/docs/identity-services-engine/](https://developer.cisco.com/docs/identity-services-engine/)
 
 #### Tags:
 
- - Telemetry, Monitoring, Analytics, Logging
+ - ERS, Identity, ISE, NAC, Posture
 
 #### Properties
 
-- [Documentation](https://developer.cisco.com/docs/secure-client/telemetry/)
-- [API Guide](https://developer.cisco.com/docs/secure-client/telemetry/guide/)
+- [Documentation](https://developer.cisco.com/docs/identity-services-engine/)
 
-### Cisco Secure Client Posture Assessment API
-API for endpoint compliance checking and posture assessment integration
+### Cisco Umbrella API
+Exposes the cloud-delivered DNS, secure web gateway, and roaming protection services that integrate with the Secure Client Umbrella module. Authentication uses OAuth 2.0 client credentials.
 
-**Human URL:** [https://developer.cisco.com/docs/secure-client/posture/](https://developer.cisco.com/docs/secure-client/posture/)
-
+**Human URL:** [https://developer.cisco.com/docs/cloud-security/](https://developer.cisco.com/docs/cloud-security/)
 
 #### Tags:
 
- - Posture, Compliance, Endpoint Security, NAC
+ - DNS, Roaming, Secure Web Gateway, Umbrella
 
 #### Properties
 
-- [Documentation](https://developer.cisco.com/docs/secure-client/posture/)
-- [SDK](https://github.com/cisco/secure-client-posture-sdk)
+- [Documentation](https://developer.cisco.com/docs/cloud-security/)
+
+### Cisco Duo Admin API
+Configures multi-factor authentication policies, users, groups, and integrations used by Secure Client deployments for ZTNA and adaptive authentication. Uses HMAC signature authentication.
+
+**Human URL:** [https://duo.com/docs/adminapi](https://duo.com/docs/adminapi)
+
+#### Tags:
+
+ - Authentication, Duo, MFA, Zero Trust
+
+#### Properties
+
+- [Documentation](https://duo.com/docs/adminapi)
+
+### Cisco Secure Access API
+The management interface for Cisco's converged SSE platform that Secure Client connects to as a SASE endpoint agent. Endpoints cover network tunnels, ZTNA application definitions, posture profiles, and reporting.
+
+**Human URL:** [https://developer.cisco.com/docs/cloud-security/secure-access/](https://developer.cisco.com/docs/cloud-security/secure-access/)
+
+#### Tags:
+
+ - SASE, Secure Access, SSE, ZTNA
+
+#### Properties
+
+- [Documentation](https://developer.cisco.com/docs/cloud-security/secure-access/)
 
 ## Common Properties
 
-- [Developer Portal](https://developer.cisco.com/)
-- [Authentication](https://developer.cisco.com/docs/authentication/)
+- [Portal](https://developer.cisco.com/)
+- [Documentation](https://www.cisco.com/c/en/us/support/security/secure-client-5/series.html)
+- [Getting Started](https://developer.cisco.com/docs/secure-client/getting-started/)
+- [Change Log](https://www.cisco.com/c/en/us/td/docs/security/vpn_client/anyconnect/Cisco-Secure-Client-5/release/notes/release-notes-cisco-secure-client-5.html)
+- [Support](https://www.cisco.com/c/en/us/support/index.html)
+- [Status](https://status.cisco.com/)
+- [Community](https://community.cisco.com/)
 - [Terms of Service](https://www.cisco.com/c/en/us/about/legal/cloud-and-software/end-user-license-agreement.html)
 - [Privacy Policy](https://www.cisco.com/c/en/us/about/legal/privacy-full.html)
-- [Support](https://www.cisco.com/c/en/us/support/index.html)
-- [Status Page](https://status.cisco.com/)
-- [SDKs](https://developer.cisco.com/site/sdks/)
-- [Change Log](https://developer.cisco.com/docs/secure-client/changelog/)
-- [Getting Started](https://developer.cisco.com/docs/secure-client/getting-started/)
-- [Rate Limits](https://developer.cisco.com/docs/rate-limits/)
+- [JSON-LD Context](json-ld/cisco-secure-client-context.jsonld)
+- [Spectral Ruleset](spectral/cisco-secure-client-spectral.yml)
+- [Naftiko Capabilities](naftiko/cisco-secure-client-capabilities.yml)
 
 ## Maintainers
 
-**FN:** Cisco Security Business Group
+**FN:** Kin Lane
 
-**Email:** secure-client-support@cisco.com
+**Email:** kin@apievangelist.com

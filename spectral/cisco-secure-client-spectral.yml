@@ -1,0 +1,37 @@
+extends:
+  - spectral:oas
+rules:
+  csc-https-only:
+    description: All Secure Client management API servers MUST use HTTPS.
+    severity: error
+    given: $.servers[*].url
+    then:
+      function: pattern
+      functionOptions:
+        match: '^https://'
+  csc-security-required:
+    description: API MUST define security schemes for token, OAuth, or HMAC auth.
+    severity: error
+    given: $.components.securitySchemes
+    then:
+      function: truthy
+  csc-operation-id:
+    description: Operations MUST have an operationId.
+    severity: error
+    given: $.paths[*][get,post,put,delete,patch]
+    then:
+      field: operationId
+      function: truthy
+  csc-tag-required:
+    description: Operations MUST be tagged for security domain grouping.
+    severity: warn
+    given: $.paths[*][get,post,put,delete,patch].tags
+    then:
+      function: truthy
+  csc-info-contact:
+    description: API info MUST contain a contact for security disclosures.
+    severity: warn
+    given: $.info
+    then:
+      field: contact
+      function: truthy

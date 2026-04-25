@@ -1,0 +1,36 @@
+capabilities:
+  - id: cisco-secure-client.manage-vpn
+    name: Manage remote-access VPN
+    description: >-
+      Configure remote-access VPN gateways, group policies, and Secure
+      Client connection profiles distributed to endpoints.
+    apis:
+      - cisco-secure-client:secure-firewall-management-api
+  - id: cisco-secure-client.assess-posture
+    name: Assess endpoint posture
+    description: >-
+      Evaluate endpoint compliance and posture state through ISE for
+      network access control decisions.
+    apis:
+      - cisco-secure-client:ise-ers-api
+  - id: cisco-secure-client.protect-dns
+    name: Protect endpoint DNS and web traffic
+    description: >-
+      Configure DNS-layer security and secure web gateway policies
+      enforced by the Secure Client Umbrella roaming module.
+    apis:
+      - cisco-secure-client:umbrella-api
+  - id: cisco-secure-client.enforce-mfa
+    name: Enforce multi-factor authentication
+    description: >-
+      Configure MFA policies, applications, and users that protect VPN
+      and ZTNA logins through the Secure Client Duo integration.
+    apis:
+      - cisco-secure-client:duo-admin-api
+  - id: cisco-secure-client.enable-ztna
+    name: Enable Zero Trust Network Access
+    description: >-
+      Define applications, posture profiles, and tunnels for the
+      converged Cisco Secure Access SSE platform.
+    apis:
+      - cisco-secure-client:secure-access-api

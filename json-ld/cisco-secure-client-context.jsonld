@@ -1,0 +1,25 @@
+{
+  "@context": {
+    "@vocab": "https://apievangelist.com/vocab/cisco-secure-client/",
+    "schema": "https://schema.org/",
+    "csc": "https://developer.cisco.com/vocab/secure-client/",
+    "Endpoint": "csc:Endpoint",
+    "User": "schema:Person",
+    "Device": "schema:Product",
+    "VPNConnection": "csc:VPNConnection",
+    "Tunnel": "csc:Tunnel",
+    "PostureAssessment": "csc:PostureAssessment",
+    "PolicyProfile": "csc:PolicyProfile",
+    "Application": "csc:ZTNAApplication",
+    "DNSPolicy": "csc:DNSPolicy",
+    "MFAEvent": "csc:MFAEvent",
+    "name": "schema:name",
+    "ipAddress": "csc:ipAddress",
+    "macAddress": "csc:macAddress",
+    "osVersion": "csc:osVersion",
+    "clientVersion": "csc:clientVersion",
+    "tunnelGroup": "csc:tunnelGroup",
+    "complianceState": "csc:complianceState",
+    "createdAt": "schema:dateCreated"
+  }
+}
