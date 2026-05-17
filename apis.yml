@@ -120,21 +120,21 @@ common:
     url: https://developer.cisco.com/
   - type: Documentation
     url: https://www.cisco.com/c/en/us/support/security/secure-client-5/series.html
-  - type: Getting Started
+  - type: GettingStarted
     url: https://developer.cisco.com/docs/secure-client/getting-started/
-  - type: Change Log
+  - type: ChangeLog
     url: https://www.cisco.com/c/en/us/td/docs/security/vpn_client/anyconnect/Cisco-Secure-Client-5/release/notes/release-notes-cisco-secure-client-5.html
   - type: Support
     url: https://www.cisco.com/c/en/us/support/index.html
-  - type: Status
+  - type: StatusPage
     url: https://status.cisco.com/
   - type: Community
     url: https://community.cisco.com/
-  - type: Terms of Service
+  - type: TermsOfService
     url: https://www.cisco.com/c/en/us/about/legal/cloud-and-software/end-user-license-agreement.html
-  - type: Privacy Policy
+  - type: PrivacyPolicy
     url: https://www.cisco.com/c/en/us/about/legal/privacy-full.html
-  - type: JSON-LD
+  - type: JSONLD
     url: json-ld/cisco-secure-client-context.jsonld
   - type: Spectral
     url: rules/cisco-secure-client-rules.yml
