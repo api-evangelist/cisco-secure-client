@@ -1,0 +1,2087 @@
+{
+  "item": [
+    {
+      "id": "803f0f49-7a09-4ce2-a7a3-b5503b985332",
+      "name": "Authentication",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ee6b9297-a542-4cde-a6e2-81d5d6d54d7a",
+          "name": "Generate an access token",
+          "request": {
+            "name": "Generate an access token",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "fmc_platform",
+                "v1",
+                "auth",
+                "generatetoken"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Hostname of the Secure Firewall Management Center",
+                  "type": "any",
+                  "value": "{{fmcHost}}",
+                  "key": "fmcHost"
+                }
+              ]
+            },
+            "method": "POST",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{basicAuthUsername}}"
+                },
+                {
+                  "key": "password",
+                  "value": "{{basicAuthPassword}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "28c67296-d8f2-4875-806d-0a13d936b12f",
+              "name": "Token returned in X-auth-access-token / X-auth-refresh-token headers",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "fmc_platform",
+                    "v1",
+                    "auth",
+                    "generatetoken"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname of the Secure Firewall Management Center",
+                      "type": "any",
+                      "value": "{{fmcHost}}",
+                      "key": "fmcHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "X-auth-access-token",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "X-auth-refresh-token",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "DOMAIN_UUID",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "61eb5bb2-a0d0-4859-957a-0e53d3b12413",
+              "name": "Authentication failed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "fmc_platform",
+                    "v1",
+                    "auth",
+                    "generatetoken"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname of the Secure Firewall Management Center",
+                      "type": "any",
+                      "value": "{{fmcHost}}",
+                      "key": "fmcHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "63bc6187-4f88-4801-adb1-5a8d9f2d8125",
+          "name": "Refresh an access token",
+          "request": {
+            "name": "Refresh an access token",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "fmc_platform",
+                "v1",
+                "auth",
+                "refreshtoken"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Hostname of the Secure Firewall Management Center",
+                  "type": "any",
+                  "value": "{{fmcHost}}",
+                  "key": "fmcHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "X-auth-access-token",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "X-auth-refresh-token",
+                "value": "<string>"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6e95fe26-c913-46ff-96e7-1952804a27dd",
+              "name": "New token in response headers",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "fmc_platform",
+                    "v1",
+                    "auth",
+                    "refreshtoken"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname of the Secure Firewall Management Center",
+                      "type": "any",
+                      "value": "{{fmcHost}}",
+                      "key": "fmcHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-auth-access-token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "X-auth-access-token",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "X-auth-refresh-token",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "e7ea85a7-67be-4b12-9c88-0f3cef641ddf",
+      "name": "Devices",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c4a48547-b80a-4be6-8058-3208639f6f06",
+          "name": "List device records (managed devices)",
+          "request": {
+            "name": "List device records (managed devices)",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "fmc_config",
+                "v1",
+                "domain",
+                ":domainUUID",
+                "devices",
+                "devicerecords"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "expanded",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "domainUUID",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Hostname of the Secure Firewall Management Center",
+                  "type": "any",
+                  "value": "{{fmcHost}}",
+                  "key": "fmcHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7bcf390a-223e-4a7f-ab68-3263e361b04b",
+              "name": "A list of device records",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "fmc_config",
+                    "v1",
+                    "domain",
+                    ":domainUUID",
+                    "devices",
+                    "devicerecords"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "expanded",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "domainUUID",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname of the Secure Firewall Management Center",
+                      "type": "any",
+                      "value": "{{fmcHost}}",
+                      "key": "fmcHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-auth-access-token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"links\": {\n    \"self\": \"string\"\n  },\n  \"items\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"hostName\": \"string\",\n      \"regKey\": \"string\",\n      \"type\": \"string\",\n      \"license_caps\": [\n        \"string\",\n        \"string\"\n      ],\n      \"accessPolicy\": {\n        \"id\": \"string\",\n        \"type\": \"string\",\n        \"name\": \"string\"\n      },\n      \"version\": \"string\",\n      \"model\": \"string\",\n      \"modelId\": \"string\",\n      \"sw_version\": \"string\",\n      \"healthStatus\": \"string\",\n      \"deviceSerialNumber\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"hostName\": \"string\",\n      \"regKey\": \"string\",\n      \"type\": \"string\",\n      \"license_caps\": [\n        \"string\",\n        \"string\"\n      ],\n      \"accessPolicy\": {\n        \"id\": \"string\",\n        \"type\": \"string\",\n        \"name\": \"string\"\n      },\n      \"version\": \"string\",\n      \"model\": \"string\",\n      \"modelId\": \"string\",\n      \"sw_version\": \"string\",\n      \"healthStatus\": \"string\",\n      \"deviceSerialNumber\": \"string\"\n    }\n  ],\n  \"paging\": {\n    \"offset\": 2384,\n    \"limit\": 1525,\n    \"count\": 1024,\n    \"pages\": 5880\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bbbc018c-88dc-48ad-99e0-b25ffcf54a67",
+          "name": "Register a new device",
+          "request": {
+            "name": "Register a new device",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "fmc_config",
+                "v1",
+                "domain",
+                ":domainUUID",
+                "devices",
+                "devicerecords"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "domainUUID",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Hostname of the Secure Firewall Management Center",
+                  "type": "any",
+                  "value": "{{fmcHost}}",
+                  "key": "fmcHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"hostName\": \"<string>\",\n  \"regKey\": \"<string>\",\n  \"type\": \"<string>\",\n  \"license_caps\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"accessPolicy\": {\n    \"id\": \"<string>\",\n    \"type\": \"<string>\",\n    \"name\": \"<string>\"\n  },\n  \"version\": \"<string>\",\n  \"model\": \"<string>\",\n  \"modelId\": \"<string>\",\n  \"sw_version\": \"<string>\",\n  \"healthStatus\": \"<string>\",\n  \"deviceSerialNumber\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b084636d-a0be-4b03-bb32-260b5bb67b81",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "fmc_config",
+                    "v1",
+                    "domain",
+                    ":domainUUID",
+                    "devices",
+                    "devicerecords"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "domainUUID",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname of the Secure Firewall Management Center",
+                      "type": "any",
+                      "value": "{{fmcHost}}",
+                      "key": "fmcHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-auth-access-token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"hostName\": \"<string>\",\n  \"regKey\": \"<string>\",\n  \"type\": \"<string>\",\n  \"license_caps\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"accessPolicy\": {\n    \"id\": \"<string>\",\n    \"type\": \"<string>\",\n    \"name\": \"<string>\"\n  },\n  \"version\": \"<string>\",\n  \"model\": \"<string>\",\n  \"modelId\": \"<string>\",\n  \"sw_version\": \"<string>\",\n  \"healthStatus\": \"<string>\",\n  \"deviceSerialNumber\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a5a7219e-5850-4f66-8cd5-067a54abc078",
+          "name": "Get a device record",
+          "request": {
+            "name": "Get a device record",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "fmc_config",
+                "v1",
+                "domain",
+                ":domainUUID",
+                "devices",
+                "devicerecords",
+                ":objectId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "domainUUID",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "objectId",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Hostname of the Secure Firewall Management Center",
+                  "type": "any",
+                  "value": "{{fmcHost}}",
+                  "key": "fmcHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "475a509d-7d78-4b38-99d9-4543f1012fe1",
+              "name": "A device record",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "fmc_config",
+                    "v1",
+                    "domain",
+                    ":domainUUID",
+                    "devices",
+                    "devicerecords",
+                    ":objectId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "domainUUID",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "objectId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname of the Secure Firewall Management Center",
+                      "type": "any",
+                      "value": "{{fmcHost}}",
+                      "key": "fmcHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-auth-access-token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"hostName\": \"string\",\n  \"regKey\": \"string\",\n  \"type\": \"string\",\n  \"license_caps\": [\n    \"string\",\n    \"string\"\n  ],\n  \"accessPolicy\": {\n    \"id\": \"string\",\n    \"type\": \"string\",\n    \"name\": \"string\"\n  },\n  \"version\": \"string\",\n  \"model\": \"string\",\n  \"modelId\": \"string\",\n  \"sw_version\": \"string\",\n  \"healthStatus\": \"string\",\n  \"deviceSerialNumber\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1ac8c2c0-2023-4776-bf47-44fcdb3f4831",
+          "name": "Update a device record",
+          "request": {
+            "name": "Update a device record",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "fmc_config",
+                "v1",
+                "domain",
+                ":domainUUID",
+                "devices",
+                "devicerecords",
+                ":objectId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "domainUUID",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "objectId",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Hostname of the Secure Firewall Management Center",
+                  "type": "any",
+                  "value": "{{fmcHost}}",
+                  "key": "fmcHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"hostName\": \"<string>\",\n  \"regKey\": \"<string>\",\n  \"type\": \"<string>\",\n  \"license_caps\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"accessPolicy\": {\n    \"id\": \"<string>\",\n    \"type\": \"<string>\",\n    \"name\": \"<string>\"\n  },\n  \"version\": \"<string>\",\n  \"model\": \"<string>\",\n  \"modelId\": \"<string>\",\n  \"sw_version\": \"<string>\",\n  \"healthStatus\": \"<string>\",\n  \"deviceSerialNumber\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "5741a1fb-b31f-4593-8e78-cf358368d859",
+              "name": "Updated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "fmc_config",
+                    "v1",
+                    "domain",
+                    ":domainUUID",
+                    "devices",
+                    "devicerecords",
+                    ":objectId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "domainUUID",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "objectId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname of the Secure Firewall Management Center",
+                      "type": "any",
+                      "value": "{{fmcHost}}",
+                      "key": "fmcHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-auth-access-token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"hostName\": \"<string>\",\n  \"regKey\": \"<string>\",\n  \"type\": \"<string>\",\n  \"license_caps\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"accessPolicy\": {\n    \"id\": \"<string>\",\n    \"type\": \"<string>\",\n    \"name\": \"<string>\"\n  },\n  \"version\": \"<string>\",\n  \"model\": \"<string>\",\n  \"modelId\": \"<string>\",\n  \"sw_version\": \"<string>\",\n  \"healthStatus\": \"<string>\",\n  \"deviceSerialNumber\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "53c82417-111b-4689-bb04-f5c9903221fb",
+          "name": "Unregister a device",
+          "request": {
+            "name": "Unregister a device",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "fmc_config",
+                "v1",
+                "domain",
+                ":domainUUID",
+                "devices",
+                "devicerecords",
+                ":objectId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "domainUUID",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "objectId",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Hostname of the Secure Firewall Management Center",
+                  "type": "any",
+                  "value": "{{fmcHost}}",
+                  "key": "fmcHost"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5f29a505-8516-4dc7-a594-b5525638b7ba",
+              "name": "Deleted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "fmc_config",
+                    "v1",
+                    "domain",
+                    ":domainUUID",
+                    "devices",
+                    "devicerecords",
+                    ":objectId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "domainUUID",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "objectId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname of the Secure Firewall Management Center",
+                      "type": "any",
+                      "value": "{{fmcHost}}",
+                      "key": "fmcHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-auth-access-token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "691bf645-4a48-40fc-82fa-5e72651d3211",
+      "name": "AccessPolicies",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3ac11719-47d4-4a2e-bafc-93a0f3792824",
+          "name": "List access policies",
+          "request": {
+            "name": "List access policies",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "fmc_config",
+                "v1",
+                "domain",
+                ":domainUUID",
+                "policy",
+                "accesspolicies"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "expanded",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "domainUUID",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Hostname of the Secure Firewall Management Center",
+                  "type": "any",
+                  "value": "{{fmcHost}}",
+                  "key": "fmcHost"
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "38e97590-696e-4ef2-a848-c537320d31e2",
+              "name": "A list of access policies",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "fmc_config",
+                    "v1",
+                    "domain",
+                    ":domainUUID",
+                    "policy",
+                    "accesspolicies"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "expanded",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "domainUUID",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname of the Secure Firewall Management Center",
+                      "type": "any",
+                      "value": "{{fmcHost}}",
+                      "key": "fmcHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-auth-access-token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "727f1f41-2444-41b1-b658-512d2134c5e7",
+          "name": "Create an access policy",
+          "request": {
+            "name": "Create an access policy",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "fmc_config",
+                "v1",
+                "domain",
+                ":domainUUID",
+                "policy",
+                "accesspolicies"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "domainUUID",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Hostname of the Secure Firewall Management Center",
+                  "type": "any",
+                  "value": "{{fmcHost}}",
+                  "key": "fmcHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"type\": \"<string>\",\n  \"name\": \"<string>\",\n  \"defaultAction\": {\n    \"action\": \"<string>\",\n    \"logBegin\": \"<boolean>\",\n    \"logEnd\": \"<boolean>\",\n    \"sendEventsToFMC\": \"<boolean>\"\n  },\n  \"description\": \"<string>\",\n  \"id\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "57a7985a-b93d-4f31-b1ab-c3661f68077f",
+              "name": "Created access policy",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "fmc_config",
+                    "v1",
+                    "domain",
+                    ":domainUUID",
+                    "policy",
+                    "accesspolicies"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "domainUUID",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname of the Secure Firewall Management Center",
+                      "type": "any",
+                      "value": "{{fmcHost}}",
+                      "key": "fmcHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-auth-access-token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"type\": \"<string>\",\n  \"name\": \"<string>\",\n  \"defaultAction\": {\n    \"action\": \"<string>\",\n    \"logBegin\": \"<boolean>\",\n    \"logEnd\": \"<boolean>\",\n    \"sendEventsToFMC\": \"<boolean>\"\n  },\n  \"description\": \"<string>\",\n  \"id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "b86c6714-3bd5-4fdc-b399-518061078126",
+      "name": "AccessRules",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "01f6bf93-067b-46a8-ab47-aeb2a1036ec8",
+          "name": "List rules in an access policy",
+          "request": {
+            "name": "List rules in an access policy",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "fmc_config",
+                "v1",
+                "domain",
+                ":domainUUID",
+                "policy",
+                "accesspolicies",
+                ":containerUUID",
+                "accessrules"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "domainUUID",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "containerUUID",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Hostname of the Secure Firewall Management Center",
+                  "type": "any",
+                  "value": "{{fmcHost}}",
+                  "key": "fmcHost"
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "42347f2a-4d2c-44a3-9a9f-16d20301bb49",
+              "name": "A list of access rules",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "fmc_config",
+                    "v1",
+                    "domain",
+                    ":domainUUID",
+                    "policy",
+                    "accesspolicies",
+                    ":containerUUID",
+                    "accessrules"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "domainUUID",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "containerUUID",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname of the Secure Firewall Management Center",
+                      "type": "any",
+                      "value": "{{fmcHost}}",
+                      "key": "fmcHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-auth-access-token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b40c48ba-5ff4-4bc6-a08a-826fc8462da0",
+          "name": "Create an access rule",
+          "request": {
+            "name": "Create an access rule",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "fmc_config",
+                "v1",
+                "domain",
+                ":domainUUID",
+                "policy",
+                "accesspolicies",
+                ":containerUUID",
+                "accessrules"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "domainUUID",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "containerUUID",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Hostname of the Secure Firewall Management Center",
+                  "type": "any",
+                  "value": "{{fmcHost}}",
+                  "key": "fmcHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "17b08702-0e57-4220-862a-a1efe7a16311",
+              "name": "Created access rule",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "fmc_config",
+                    "v1",
+                    "domain",
+                    ":domainUUID",
+                    "policy",
+                    "accesspolicies",
+                    ":containerUUID",
+                    "accessrules"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "domainUUID",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "containerUUID",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname of the Secure Firewall Management Center",
+                      "type": "any",
+                      "value": "{{fmcHost}}",
+                      "key": "fmcHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-auth-access-token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<object>",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "ce01f9ef-f528-4aab-990a-97bab3175dbd",
+      "name": "NetworkObjects",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2d5109f7-5389-4745-98c3-072706563855",
+          "name": "List network objects",
+          "request": {
+            "name": "List network objects",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "fmc_config",
+                "v1",
+                "domain",
+                ":domainUUID",
+                "object",
+                "networks"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "expanded",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "domainUUID",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Hostname of the Secure Firewall Management Center",
+                  "type": "any",
+                  "value": "{{fmcHost}}",
+                  "key": "fmcHost"
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "64460191-2ba0-4d85-9a4a-733b932ee53c",
+              "name": "A list of network objects",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "fmc_config",
+                    "v1",
+                    "domain",
+                    ":domainUUID",
+                    "object",
+                    "networks"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "expanded",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "domainUUID",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname of the Secure Firewall Management Center",
+                      "type": "any",
+                      "value": "{{fmcHost}}",
+                      "key": "fmcHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-auth-access-token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "935ce08f-4d81-4e2e-b9b1-23e2ca89eddc",
+          "name": "Create a network object",
+          "request": {
+            "name": "Create a network object",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "fmc_config",
+                "v1",
+                "domain",
+                ":domainUUID",
+                "object",
+                "networks"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "domainUUID",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Hostname of the Secure Firewall Management Center",
+                  "type": "any",
+                  "value": "{{fmcHost}}",
+                  "key": "fmcHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"value\": \"<string>\",\n  \"description\": \"<string>\",\n  \"type\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "8cc7613d-2846-48e2-a2f7-54a44a15596a",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "fmc_config",
+                    "v1",
+                    "domain",
+                    ":domainUUID",
+                    "object",
+                    "networks"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "domainUUID",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname of the Secure Firewall Management Center",
+                      "type": "any",
+                      "value": "{{fmcHost}}",
+                      "key": "fmcHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-auth-access-token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"value\": \"<string>\",\n  \"description\": \"<string>\",\n  \"type\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "98d65bf3-1976-433d-8c74-106507cde62d",
+      "name": "Hosts",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "80b52ba8-ee78-4709-ae0f-c1e9cd09b0ec",
+          "name": "List host objects",
+          "request": {
+            "name": "List host objects",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "fmc_config",
+                "v1",
+                "domain",
+                ":domainUUID",
+                "object",
+                "hosts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "domainUUID",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Hostname of the Secure Firewall Management Center",
+                  "type": "any",
+                  "value": "{{fmcHost}}",
+                  "key": "fmcHost"
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7bef6ca2-0527-4375-ad64-a0406f57c14a",
+              "name": "A list of host objects",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "fmc_config",
+                    "v1",
+                    "domain",
+                    ":domainUUID",
+                    "object",
+                    "hosts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "domainUUID",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname of the Secure Firewall Management Center",
+                      "type": "any",
+                      "value": "{{fmcHost}}",
+                      "key": "fmcHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-auth-access-token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e65d6e97-44c2-4e8d-85e3-9a37482df083",
+          "name": "Create a host object",
+          "request": {
+            "name": "Create a host object",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "fmc_config",
+                "v1",
+                "domain",
+                ":domainUUID",
+                "object",
+                "hosts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "domainUUID",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Hostname of the Secure Firewall Management Center",
+                  "type": "any",
+                  "value": "{{fmcHost}}",
+                  "key": "fmcHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"value\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "6fca50ed-a702-4148-b4d7-f2da1d673166",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "fmc_config",
+                    "v1",
+                    "domain",
+                    ":domainUUID",
+                    "object",
+                    "hosts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "domainUUID",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname of the Secure Firewall Management Center",
+                      "type": "any",
+                      "value": "{{fmcHost}}",
+                      "key": "fmcHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-auth-access-token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"value\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Hostname of the Secure Firewall Management Center",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "fmc.example.com",
+      "key": "fmcHost"
+    },
+    {
+      "type": "string",
+      "value": "https://{{fmcHost}}",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-auth-access-token"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "4e7f7b0c-d652-49ca-bb51-12199839d1c7",
+    "name": "Cisco Secure Firewall Management Center API (Secure Client management plane)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Cisco Secure Firewall Management Center (FMC) REST API configures\nremote-access VPN gateways, group policies, devices, and Secure Client\nprofiles distributed to endpoints. Authentication uses a token generated\nvia the generatetoken endpoint and passed as the X-auth-access-token\nheader on subsequent calls; the response also returns an\nX-auth-refresh-token used to refresh.\n\n\nContact Support:\n Name: Cisco DevNet",
+      "type": "text/plain"
+    }
+  }
+}

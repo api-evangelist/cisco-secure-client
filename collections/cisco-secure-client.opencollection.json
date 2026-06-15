@@ -1,0 +1,431 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Cisco Secure Firewall Management Center API (Secure Client management plane)",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-auth-access-token",
+      "value": "{{X-auth-access-token}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Authentication",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Generate an access token",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{fmcHost}/api/fmc_platform/v1/auth/generatetoken",
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Generate an access token"
+        },
+        {
+          "info": {
+            "name": "Refresh an access token",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{fmcHost}/api/fmc_platform/v1/auth/refreshtoken",
+            "headers": [
+              {
+                "name": "X-auth-access-token",
+                "value": ""
+              },
+              {
+                "name": "X-auth-refresh-token",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Refresh an access token"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Devices",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List device records (managed devices)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{fmcHost}/api/fmc_config/v1/domain/:domainUUID/devices/devicerecords",
+            "params": [
+              {
+                "name": "domainUUID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "expanded",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List device records (managed devices)"
+        },
+        {
+          "info": {
+            "name": "Register a new device",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{fmcHost}/api/fmc_config/v1/domain/:domainUUID/devices/devicerecords",
+            "params": [
+              {
+                "name": "domainUUID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Register a new device"
+        },
+        {
+          "info": {
+            "name": "Get a device record",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{fmcHost}/api/fmc_config/v1/domain/:domainUUID/devices/devicerecords/:objectId",
+            "params": [
+              {
+                "name": "domainUUID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "objectId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a device record"
+        },
+        {
+          "info": {
+            "name": "Update a device record",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{fmcHost}/api/fmc_config/v1/domain/:domainUUID/devices/devicerecords/:objectId",
+            "params": [
+              {
+                "name": "domainUUID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "objectId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a device record"
+        },
+        {
+          "info": {
+            "name": "Unregister a device",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{fmcHost}/api/fmc_config/v1/domain/:domainUUID/devices/devicerecords/:objectId",
+            "params": [
+              {
+                "name": "domainUUID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "objectId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Unregister a device"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "AccessPolicies",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List access policies",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{fmcHost}/api/fmc_config/v1/domain/:domainUUID/policy/accesspolicies",
+            "params": [
+              {
+                "name": "domainUUID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "expanded",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List access policies"
+        },
+        {
+          "info": {
+            "name": "Create an access policy",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{fmcHost}/api/fmc_config/v1/domain/:domainUUID/policy/accesspolicies",
+            "params": [
+              {
+                "name": "domainUUID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create an access policy"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "AccessRules",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List rules in an access policy",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{fmcHost}/api/fmc_config/v1/domain/:domainUUID/policy/accesspolicies/:containerUUID/accessrules",
+            "params": [
+              {
+                "name": "domainUUID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "containerUUID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List rules in an access policy"
+        },
+        {
+          "info": {
+            "name": "Create an access rule",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{fmcHost}/api/fmc_config/v1/domain/:domainUUID/policy/accesspolicies/:containerUUID/accessrules",
+            "params": [
+              {
+                "name": "domainUUID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "containerUUID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create an access rule"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "NetworkObjects",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List network objects",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{fmcHost}/api/fmc_config/v1/domain/:domainUUID/object/networks",
+            "params": [
+              {
+                "name": "domainUUID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "expanded",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List network objects"
+        },
+        {
+          "info": {
+            "name": "Create a network object",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{fmcHost}/api/fmc_config/v1/domain/:domainUUID/object/networks",
+            "params": [
+              {
+                "name": "domainUUID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a network object"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Hosts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List host objects",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{fmcHost}/api/fmc_config/v1/domain/:domainUUID/object/hosts",
+            "params": [
+              {
+                "name": "domainUUID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List host objects"
+        },
+        {
+          "info": {
+            "name": "Create a host object",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{fmcHost}/api/fmc_config/v1/domain/:domainUUID/object/hosts",
+            "params": [
+              {
+                "name": "domainUUID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a host object"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
