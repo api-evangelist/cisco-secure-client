@@ -29,7 +29,7 @@ apis:
       - FTD
       - Management
       - VPN
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://developer.cisco.com/docs/secure-firewall-management-center-api/
     properties:
       - url: https://developer.cisco.com/docs/secure-firewall-management-center-api/
@@ -46,7 +46,7 @@ apis:
       - ISE
       - NAC
       - Posture
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://developer.cisco.com/docs/identity-services-engine/
     properties:
       - url: https://developer.cisco.com/docs/identity-services-engine/
@@ -62,7 +62,7 @@ apis:
       - Roaming
       - Secure Web Gateway
       - Umbrella
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     baseURL: https://api.umbrella.com
     humanURL: https://developer.cisco.com/docs/cloud-security/
     properties:
@@ -79,7 +79,7 @@ apis:
       - Duo
       - MFA
       - Zero Trust
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://duo.com/docs/adminapi
     properties:
       - url: https://duo.com/docs/adminapi
@@ -95,7 +95,7 @@ apis:
       - Secure Access
       - SSE
       - ZTNA
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://developer.cisco.com/docs/cloud-security/secure-access/
     properties:
       - url: https://developer.cisco.com/docs/cloud-security/secure-access/
