@@ -105,8 +105,16 @@ apis:
       connects to as a SASE endpoint agent. Endpoints cover network tunnels, ZTNA application definitions, posture
       profiles, and reporting.
 common:
+  - type: VulnerabilityDisclosure
+    url: security/cisco-secure-client-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/cisco-secure-client-domain-security.yml
+  - type: Authentication
+    url: authentication/cisco-secure-client-authentication.yml
   - type: Portal
     url: https://developer.cisco.com/
+  - url: https://blogs.cisco.com/tag/anyconnect/feed
+    type: Blog
   - type: Documentation
     url: https://www.cisco.com/c/en/us/support/security/secure-client-5/series.html
   - type: GettingStarted
