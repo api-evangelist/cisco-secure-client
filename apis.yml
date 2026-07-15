@@ -105,6 +105,8 @@ apis:
       connects to as a SASE endpoint agent. Endpoints cover network tunnels, ZTNA application definitions, posture
       profiles, and reporting.
 common:
+  - type: AgenticAccess
+    url: agentic-access/cisco-secure-client-agentic-access.yml
   - type: VulnerabilityDisclosure
     url: security/cisco-secure-client-vulnerability-disclosure.yml
   - type: DomainSecurity
