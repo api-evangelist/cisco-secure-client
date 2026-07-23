@@ -1,0 +1,194 @@
+openapi: 3.1.0
+info:
+  title: Cisco Secure Firewall Management Center API (Secure Client management plane) AccessPolicies Devices API
+  description: 'The Cisco Secure Firewall Management Center (FMC) REST API configures
+
+    remote-access VPN gateways, group policies, devices, and Secure Client
+
+    profiles distributed to endpoints. Authentication uses a token generated
+
+    via the generatetoken endpoint and passed as the X-auth-access-token
+
+    header on subsequent calls; the response also returns an
+
+    X-auth-refresh-token used to refresh.
+
+    '
+  version: 1.0.0
+  contact:
+    name: Cisco DevNet
+    url: https://developer.cisco.com/docs/secure-firewall-management-center-api/
+servers:
+- url: https://{fmcHost}
+  variables:
+    fmcHost:
+      default: fmc.example.com
+      description: Hostname of the Secure Firewall Management Center
+security:
+- tokenAuth: []
+tags:
+- name: Devices
+paths:
+  /api/fmc_config/v1/domain/{domainUUID}/devices/devicerecords:
+    parameters:
+    - in: path
+      name: domainUUID
+      required: true
+      schema:
+        type: string
+    get:
+      tags:
+      - Devices
+      summary: List device records (managed devices)
+      operationId: listDeviceRecords
+      parameters:
+      - in: query
+        name: offset
+        schema:
+          type: integer
+      - in: query
+        name: limit
+        schema:
+          type: integer
+      - in: query
+        name: expanded
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: A list of device records
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeviceRecordList'
+    post:
+      tags:
+      - Devices
+      summary: Register a new device
+      operationId: createDeviceRecord
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeviceRecord'
+      responses:
+        '201':
+          description: Created
+  /api/fmc_config/v1/domain/{domainUUID}/devices/devicerecords/{objectId}:
+    parameters:
+    - in: path
+      name: domainUUID
+      required: true
+      schema:
+        type: string
+    - in: path
+      name: objectId
+      required: true
+      schema:
+        type: string
+    get:
+      tags:
+      - Devices
+      summary: Get a device record
+      operationId: getDeviceRecord
+      responses:
+        '200':
+          description: A device record
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeviceRecord'
+    put:
+      tags:
+      - Devices
+      summary: Update a device record
+      operationId: updateDeviceRecord
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeviceRecord'
+      responses:
+        '200':
+          description: Updated
+    delete:
+      tags:
+      - Devices
+      summary: Unregister a device
+      operationId: deleteDeviceRecord
+      responses:
+        '200':
+          description: Deleted
+components:
+  schemas:
+    DeviceRecord:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        hostName:
+          type: string
+        regKey:
+          type: string
+        type:
+          type: string
+        license_caps:
+          type: array
+          items:
+            type: string
+        accessPolicy:
+          type: object
+          properties:
+            id:
+              type: string
+            type:
+              type: string
+            name:
+              type: string
+        version:
+          type: string
+        model:
+          type: string
+        modelId:
+          type: string
+        sw_version:
+          type: string
+        healthStatus:
+          type: string
+        deviceSerialNumber:
+          type: string
+    DeviceRecordList:
+      type: object
+      properties:
+        links:
+          type: object
+          properties:
+            self:
+              type: string
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/DeviceRecord'
+        paging:
+          type: object
+          properties:
+            offset:
+              type: integer
+            limit:
+              type: integer
+            count:
+              type: integer
+            pages:
+              type: integer
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+    tokenAuth:
+      type: apiKey
+      in: header
+      name: X-auth-access-token

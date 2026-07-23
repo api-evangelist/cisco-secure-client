@@ -1,0 +1,74 @@
+openapi: 3.1.0
+info:
+  title: Cisco Secure Firewall Management Center API (Secure Client management plane) AccessPolicies AccessRules API
+  description: 'The Cisco Secure Firewall Management Center (FMC) REST API configures
+
+    remote-access VPN gateways, group policies, devices, and Secure Client
+
+    profiles distributed to endpoints. Authentication uses a token generated
+
+    via the generatetoken endpoint and passed as the X-auth-access-token
+
+    header on subsequent calls; the response also returns an
+
+    X-auth-refresh-token used to refresh.
+
+    '
+  version: 1.0.0
+  contact:
+    name: Cisco DevNet
+    url: https://developer.cisco.com/docs/secure-firewall-management-center-api/
+servers:
+- url: https://{fmcHost}
+  variables:
+    fmcHost:
+      default: fmc.example.com
+      description: Hostname of the Secure Firewall Management Center
+security:
+- tokenAuth: []
+tags:
+- name: AccessRules
+paths:
+  /api/fmc_config/v1/domain/{domainUUID}/policy/accesspolicies/{containerUUID}/accessrules:
+    parameters:
+    - in: path
+      name: domainUUID
+      required: true
+      schema:
+        type: string
+    - in: path
+      name: containerUUID
+      required: true
+      schema:
+        type: string
+    get:
+      tags:
+      - AccessRules
+      summary: List rules in an access policy
+      operationId: listAccessRules
+      responses:
+        '200':
+          description: A list of access rules
+    post:
+      tags:
+      - AccessRules
+      summary: Create an access rule
+      operationId: createAccessRule
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '201':
+          description: Created access rule
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+    tokenAuth:
+      type: apiKey
+      in: header
+      name: X-auth-access-token

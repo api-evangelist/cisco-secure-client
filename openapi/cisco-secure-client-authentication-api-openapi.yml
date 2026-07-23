@@ -1,0 +1,83 @@
+openapi: 3.1.0
+info:
+  title: Cisco Secure Firewall Management Center API (Secure Client management plane) AccessPolicies Authentication API
+  description: 'The Cisco Secure Firewall Management Center (FMC) REST API configures
+
+    remote-access VPN gateways, group policies, devices, and Secure Client
+
+    profiles distributed to endpoints. Authentication uses a token generated
+
+    via the generatetoken endpoint and passed as the X-auth-access-token
+
+    header on subsequent calls; the response also returns an
+
+    X-auth-refresh-token used to refresh.
+
+    '
+  version: 1.0.0
+  contact:
+    name: Cisco DevNet
+    url: https://developer.cisco.com/docs/secure-firewall-management-center-api/
+servers:
+- url: https://{fmcHost}
+  variables:
+    fmcHost:
+      default: fmc.example.com
+      description: Hostname of the Secure Firewall Management Center
+security:
+- tokenAuth: []
+tags:
+- name: Authentication
+paths:
+  /api/fmc_platform/v1/auth/generatetoken:
+    post:
+      tags:
+      - Authentication
+      summary: Generate an access token
+      operationId: generateToken
+      security:
+      - basicAuth: []
+      responses:
+        '204':
+          description: Token returned in X-auth-access-token / X-auth-refresh-token headers
+          headers:
+            X-auth-access-token:
+              schema:
+                type: string
+            X-auth-refresh-token:
+              schema:
+                type: string
+            DOMAIN_UUID:
+              schema:
+                type: string
+        '401':
+          description: Authentication failed
+  /api/fmc_platform/v1/auth/refreshtoken:
+    post:
+      tags:
+      - Authentication
+      summary: Refresh an access token
+      operationId: refreshToken
+      parameters:
+      - in: header
+        name: X-auth-access-token
+        required: true
+        schema:
+          type: string
+      - in: header
+        name: X-auth-refresh-token
+        required: true
+        schema:
+          type: string
+      responses:
+        '204':
+          description: New token in response headers
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+    tokenAuth:
+      type: apiKey
+      in: header
+      name: X-auth-access-token
