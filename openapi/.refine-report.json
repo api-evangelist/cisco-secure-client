@@ -1,0 +1,24 @@
+{
+  "provider": "cisco-secure-client",
+  "sources": [
+    "cisco-secure-client-accesspolicies-api-openapi.yml",
+    "cisco-secure-client-accessrules-api-openapi.yml",
+    "cisco-secure-client-authentication-api-openapi.yml",
+    "cisco-secure-client-devices-api-openapi.yml",
+    "cisco-secure-client-hosts-api-openapi.yml",
+    "cisco-secure-client-networkobjects-api-openapi.yml"
+  ],
+  "outputs": [
+    "cisco-secure-client-accesspolicies-api-openapi.yml",
+    "cisco-secure-client-accessrules-api-openapi.yml",
+    "cisco-secure-client-authentication-api-openapi.yml",
+    "cisco-secure-client-devices-api-openapi.yml",
+    "cisco-secure-client-hosts-api-openapi.yml",
+    "cisco-secure-client-networkobjects-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
