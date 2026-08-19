@@ -1,0 +1,81 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Cisco Secure Firewall Management Center API (Secure Client management plane) AccessPolicies NetworkObjects API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-auth-access-token",
+      "value": "{{X-auth-access-token}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "NetworkObjects",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List network objects",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{fmcHost}/api/fmc_config/v1/domain/:domainUUID/object/networks",
+            "params": [
+              {
+                "name": "domainUUID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "expanded",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List network objects"
+        },
+        {
+          "info": {
+            "name": "Create a network object",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{fmcHost}/api/fmc_config/v1/domain/:domainUUID/object/networks",
+            "params": [
+              {
+                "name": "domainUUID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a network object"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

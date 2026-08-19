@@ -1,0 +1,63 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Cisco Secure Firewall Management Center API (Secure Client management plane) AccessPolicies Authentication API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-auth-access-token",
+      "value": "{{X-auth-access-token}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Authentication",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Generate an access token",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{fmcHost}/api/fmc_platform/v1/auth/generatetoken",
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Generate an access token"
+        },
+        {
+          "info": {
+            "name": "Refresh an access token",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{fmcHost}/api/fmc_platform/v1/auth/refreshtoken",
+            "headers": [
+              {
+                "name": "X-auth-access-token",
+                "value": ""
+              },
+              {
+                "name": "X-auth-refresh-token",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Refresh an access token"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,66 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Cisco Secure Firewall Management Center API (Secure Client management plane) AccessPolicies Hosts API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-auth-access-token",
+      "value": "{{X-auth-access-token}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Hosts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List host objects",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{fmcHost}/api/fmc_config/v1/domain/:domainUUID/object/hosts",
+            "params": [
+              {
+                "name": "domainUUID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List host objects"
+        },
+        {
+          "info": {
+            "name": "Create a host object",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{fmcHost}/api/fmc_config/v1/domain/:domainUUID/object/hosts",
+            "params": [
+              {
+                "name": "domainUUID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a host object"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

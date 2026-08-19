@@ -1,0 +1,320 @@
+{
+  "item": [
+    {
+      "id": "76ecf2bd-94a3-4c1a-8e64-0d90a05207a0",
+      "name": "AccessPolicies",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c52dbb13-c09e-4cde-95af-461bffda3d70",
+          "name": "List access policies",
+          "request": {
+            "name": "List access policies",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "fmc_config",
+                "v1",
+                "domain",
+                ":domainUUID",
+                "policy",
+                "accesspolicies"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "expanded",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "domainUUID",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Hostname of the Secure Firewall Management Center",
+                  "type": "any",
+                  "value": "{{fmcHost}}",
+                  "key": "fmcHost"
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ef07f7de-787a-49f6-b927-a45c2df493a6",
+              "name": "A list of access policies",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "fmc_config",
+                    "v1",
+                    "domain",
+                    ":domainUUID",
+                    "policy",
+                    "accesspolicies"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "expanded",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "domainUUID",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname of the Secure Firewall Management Center",
+                      "type": "any",
+                      "value": "{{fmcHost}}",
+                      "key": "fmcHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-auth-access-token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "41e6ea39-710f-4ec7-88cf-00a67a52a6c5",
+          "name": "Create an access policy",
+          "request": {
+            "name": "Create an access policy",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "fmc_config",
+                "v1",
+                "domain",
+                ":domainUUID",
+                "policy",
+                "accesspolicies"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "domainUUID",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Hostname of the Secure Firewall Management Center",
+                  "type": "any",
+                  "value": "{{fmcHost}}",
+                  "key": "fmcHost"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"type\": \"<string>\",\n  \"name\": \"<string>\",\n  \"defaultAction\": {\n    \"action\": \"<string>\",\n    \"logBegin\": \"<boolean>\",\n    \"logEnd\": \"<boolean>\",\n    \"sendEventsToFMC\": \"<boolean>\"\n  },\n  \"description\": \"<string>\",\n  \"id\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "79640e7b-bc94-4ffb-b771-570a8832c0cc",
+              "name": "Created access policy",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "fmc_config",
+                    "v1",
+                    "domain",
+                    ":domainUUID",
+                    "policy",
+                    "accesspolicies"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "domainUUID",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Hostname of the Secure Firewall Management Center",
+                      "type": "any",
+                      "value": "{{fmcHost}}",
+                      "key": "fmcHost"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-auth-access-token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"type\": \"<string>\",\n  \"name\": \"<string>\",\n  \"defaultAction\": {\n    \"action\": \"<string>\",\n    \"logBegin\": \"<boolean>\",\n    \"logEnd\": \"<boolean>\",\n    \"sendEventsToFMC\": \"<boolean>\"\n  },\n  \"description\": \"<string>\",\n  \"id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Hostname of the Secure Firewall Management Center",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "fmc.example.com",
+      "key": "fmcHost"
+    },
+    {
+      "type": "string",
+      "value": "https://{{fmcHost}}",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-auth-access-token"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "f6d119b3-4ae0-4f24-8873-39500accf7e9",
+    "name": "Cisco Secure Firewall Management Center API (Secure Client management plane) AccessPolicies API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Cisco Secure Firewall Management Center (FMC) REST API configures\nremote-access VPN gateways, group policies, devices, and Secure Client\nprofiles distributed to endpoints. Authentication uses a token generated\nvia the generatetoken endpoint and passed as the X-auth-access-token\nheader on subsequent calls; the response also returns an\nX-auth-refresh-token used to refresh.\n\n\nContact Support:\n Name: Cisco DevNet",
+      "type": "text/plain"
+    }
+  }
+}

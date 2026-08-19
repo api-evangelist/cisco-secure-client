@@ -1,0 +1,81 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Cisco Secure Firewall Management Center API (Secure Client management plane) AccessPolicies API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-auth-access-token",
+      "value": "{{X-auth-access-token}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "AccessPolicies",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List access policies",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{fmcHost}/api/fmc_config/v1/domain/:domainUUID/policy/accesspolicies",
+            "params": [
+              {
+                "name": "domainUUID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "expanded",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List access policies"
+        },
+        {
+          "info": {
+            "name": "Create an access policy",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{fmcHost}/api/fmc_config/v1/domain/:domainUUID/policy/accesspolicies",
+            "params": [
+              {
+                "name": "domainUUID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create an access policy"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,76 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Cisco Secure Firewall Management Center API (Secure Client management plane) AccessPolicies AccessRules API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-auth-access-token",
+      "value": "{{X-auth-access-token}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "AccessRules",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List rules in an access policy",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{fmcHost}/api/fmc_config/v1/domain/:domainUUID/policy/accesspolicies/:containerUUID/accessrules",
+            "params": [
+              {
+                "name": "domainUUID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "containerUUID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List rules in an access policy"
+        },
+        {
+          "info": {
+            "name": "Create an access rule",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{fmcHost}/api/fmc_config/v1/domain/:domainUUID/policy/accesspolicies/:containerUUID/accessrules",
+            "params": [
+              {
+                "name": "domainUUID",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "containerUUID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create an access rule"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
