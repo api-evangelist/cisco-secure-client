@@ -65,7 +65,7 @@ apis:
 - aid: cisco-secure-client:ise-ers-api
   name: Cisco ISE ERS API
   tags:
-  - e-RS
+  - ERS
   - Identity
   - ISE
   - NAC
@@ -136,7 +136,7 @@ apis:
   humanURL: https://developer.cisco.com/docs/secure-firewall-management-center-api/
   baseURL: https://api.umbrella.com
   tags:
-  - Access Policies
+  - AccessPolicies
   tags_raw:
   - AccessPolicies
   properties:
@@ -148,7 +148,7 @@ apis:
   humanURL: https://developer.cisco.com/docs/secure-firewall-management-center-api/
   baseURL: https://api.umbrella.com
   tags:
-  - Access Rules
+  - AccessRules
   tags_raw:
   - AccessRules
   properties:
