@@ -196,6 +196,8 @@ apis:
   - type: OpenAPI
     url: openapi/cisco-secure-client-networkobjects-api-openapi.yml
 common:
+- type: Website
+  url: https://www.cisco.com/
 - type: ParentCompany
   url: https://apis.io/providers/cisco/
   name: Cisco
