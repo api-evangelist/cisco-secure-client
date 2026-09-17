@@ -60,9 +60,10 @@ apis:
   properties:
   - url: https://developer.cisco.com/docs/secure-firewall-management-center-api/
     type: Documentation
-  description: The Cisco Secure Firewall Management Center API configures remote-access VPN gateways, group policies,
-    and Secure Client profiles distributed to endpoints. Authentication uses a token generated via the generatetoken
-    endpoint and passed as the X-auth-access-token header on subsequent calls.
+  description: >-
+    The Cisco Secure Firewall Management Center API configures remote-access VPN gateways, group policies,
+    and Secure Client profiles distributed to endpoints. Authentication uses a token generated via the
+    generatetoken endpoint and passed as the X-auth-access-token header on subsequent calls.
 - aid: cisco-secure-client:ise-ers-api
   name: Cisco ISE ERS API
   tags:
@@ -82,9 +83,10 @@ apis:
   properties:
   - url: https://developer.cisco.com/docs/identity-services-engine/
     type: Documentation
-  description: The Cisco Identity Services Engine External RESTful Services (ERS) API manages the network access
-    control plane that Secure Client integrates with for posture assessment and policy enforcement. Endpoints cover
-    endpoint identity groups, posture conditions, and authorization policies.
+  description: >-
+    The Cisco Identity Services Engine External RESTful Services (ERS) API manages the network access
+    control plane that Secure Client integrates with for posture assessment and policy enforcement. Endpoints
+    cover endpoint identity groups, posture conditions, and authorization policies.
 - aid: cisco-secure-client:umbrella-api
   name: Cisco Umbrella API
   tags:
@@ -98,9 +100,10 @@ apis:
   properties:
   - url: https://developer.cisco.com/docs/cloud-security/
     type: Documentation
-  description: The Cisco Umbrella API exposes the cloud-delivered DNS, secure web gateway, and roaming protection
-    services that integrate with the Secure Client Umbrella module. Authentication uses OAuth 2.0 client credentials
-    and endpoints cover deployments, policies, reports, and destination lists.
+  description: >-
+    The Cisco Umbrella API exposes the cloud-delivered DNS, secure web gateway, and roaming protection
+    services that integrate with the Secure Client Umbrella module. Authentication uses OAuth 2.0 client
+    credentials and endpoints cover deployments, policies, reports, and destination lists.
 - aid: cisco-secure-client:duo-admin-api
   name: Cisco Duo Admin API
   tags:
@@ -113,9 +116,10 @@ apis:
   properties:
   - url: https://duo.com/docs/adminapi
     type: Documentation
-  description: The Duo Admin API configures multi-factor authentication policies, users, groups, and integrations
-    used by Secure Client deployments for ZTNA and adaptive authentication. Authentication uses an HMAC signature
-    scheme over the request and integration keys.
+  description: >-
+    The Duo Admin API configures multi-factor authentication policies, users, groups, and integrations
+    used by Secure Client deployments for ZTNA and adaptive authentication. Authentication uses an HMAC
+    signature scheme over the request and integration keys.
 - aid: cisco-secure-client:secure-access-api
   name: Cisco Secure Access API
   tags:
@@ -128,33 +132,10 @@ apis:
   properties:
   - url: https://developer.cisco.com/docs/cloud-security/secure-access/
     type: Documentation
-  description: The Cisco Secure Access API is the management interface for Cisco's converged SSE platform that Secure
+  description: >-
+    The Cisco Secure Access API is the management interface for Cisco's converged SSE platform that Secure
     Client connects to as a SASE endpoint agent. Endpoints cover network tunnels, ZTNA application definitions,
     posture profiles, and reporting.
-- aid: cisco-secure-client:cisco-secure-client-accesspolicies-api
-  name: Cisco Secure Client AccessPolicies API
-  description: The AccessPolicies API from Cisco Secure Client — 1 operation(s) for accesspolicies.
-  humanURL: https://developer.cisco.com/docs/secure-firewall-management-center-api/
-  baseURL: https://api.umbrella.com
-  tags:
-  - Access Policies
-  tags_raw:
-  - AccessPolicies
-  properties:
-  - type: OpenAPI
-    url: openapi/cisco-secure-client-accesspolicies-api-openapi.yml
-- aid: cisco-secure-client:cisco-secure-client-accessrules-api
-  name: Cisco Secure Client AccessRules API
-  description: The AccessRules API from Cisco Secure Client — 1 operation(s) for accessrules.
-  humanURL: https://developer.cisco.com/docs/secure-firewall-management-center-api/
-  baseURL: https://api.umbrella.com
-  tags:
-  - Access Rules
-  tags_raw:
-  - AccessRules
-  properties:
-  - type: OpenAPI
-    url: openapi/cisco-secure-client-accessrules-api-openapi.yml
 - aid: cisco-secure-client:cisco-secure-client-authentication-api
   name: Cisco Secure Client Authentication API
   description: The Authentication API from Cisco Secure Client — 2 operation(s) for authentication.
@@ -195,6 +176,26 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/cisco-secure-client-networkobjects-api-openapi.yml
+- aid: cisco-secure-client:cisco-secure-client-access-policies-api
+  name: Cisco Secure Client Access Policies API
+  description: The Access Policies API from Cisco Secure Client — 1 operation(s) for access policies.
+  humanURL: https://developer.cisco.com/docs/secure-firewall-management-center-api/
+  baseURL: https://api.umbrella.com
+  tags:
+  - Access Policies
+  properties:
+  - type: OpenAPI
+    url: openapi/cisco-secure-client-access-policies-api-openapi.yml
+- aid: cisco-secure-client:cisco-secure-client-access-rules-api
+  name: Cisco Secure Client Access Rules API
+  description: The Access Rules API from Cisco Secure Client — 1 operation(s) for access rules.
+  humanURL: https://developer.cisco.com/docs/secure-firewall-management-center-api/
+  baseURL: https://api.umbrella.com
+  tags:
+  - Access Rules
+  properties:
+  - type: OpenAPI
+    url: openapi/cisco-secure-client-access-rules-api-openapi.yml
 common:
 - type: Website
   url: https://www.cisco.com/
