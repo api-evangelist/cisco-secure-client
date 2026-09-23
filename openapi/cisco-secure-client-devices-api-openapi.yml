@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Cisco Secure Firewall Management Center API (Secure Client management plane) AccessPolicies Devices API
+  title: Cisco Secure Firewall Management Center API (Secure Client…
   description: 'The Cisco Secure Firewall Management Center (FMC) REST API configures
 
     remote-access VPN gateways, group policies, devices, and Secure Client
@@ -11,9 +11,7 @@ info:
 
     header on subsequent calls; the response also returns an
 
-    X-auth-refresh-token used to refresh.
-
-    '
+    X-auth-refresh-token used to refresh.'
   version: 1.0.0
   contact:
     name: Cisco DevNet

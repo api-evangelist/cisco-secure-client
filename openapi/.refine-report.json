@@ -1,12 +1,7 @@
 {
   "provider": "cisco-secure-client",
   "sources": [
-    "cisco-secure-client-accesspolicies-api-openapi.yml",
-    "cisco-secure-client-accessrules-api-openapi.yml",
-    "cisco-secure-client-authentication-api-openapi.yml",
-    "cisco-secure-client-devices-api-openapi.yml",
-    "cisco-secure-client-hosts-api-openapi.yml",
-    "cisco-secure-client-networkobjects-api-openapi.yml"
+    "_original/cisco-secure-client-openapi.yml"
   ],
   "outputs": [
     "cisco-secure-client-accesspolicies-api-openapi.yml",
@@ -16,9 +11,23 @@
     "cisco-secure-client-hosts-api-openapi.yml",
     "cisco-secure-client-networkobjects-api-openapi.yml"
   ],
-  "archived": [],
+  "archived": [
+    "deleted 2 superseded output(s) from the previous generation"
+  ],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "cisco-secure-client-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "superseded outputs removed: cisco-secure-client-access-policies-api-openapi.yml, cisco-secure-client-access-rules-api-openapi.yml",
+    "apis.yml register: written (+2 apis, 11 total)"
+  ],
+  "skipped": [
+    "cisco-secure-client-access-policies-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "cisco-secure-client-access-rules-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "cisco-secure-client-authentication-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "cisco-secure-client-devices-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "cisco-secure-client-hosts-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "cisco-secure-client-networkobjects-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
