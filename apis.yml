@@ -67,7 +67,7 @@ apis:
 - aid: cisco-secure-client:ise-ers-api
   name: Cisco ISE ERS API
   tags:
-  - e-RS
+  - ERS
   - Identity
   - ISE
   - NAC

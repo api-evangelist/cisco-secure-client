@@ -121,6 +121,29 @@ paths:
           description: Deleted
 components:
   schemas:
+    DeviceRecordList:
+      type: object
+      properties:
+        links:
+          type: object
+          properties:
+            self:
+              type: string
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/DeviceRecord'
+        paging:
+          type: object
+          properties:
+            offset:
+              type: integer
+            limit:
+              type: integer
+            count:
+              type: integer
+            pages:
+              type: integer
     DeviceRecord:
       type: object
       properties:
@@ -159,29 +182,6 @@ components:
           type: string
         deviceSerialNumber:
           type: string
-    DeviceRecordList:
-      type: object
-      properties:
-        links:
-          type: object
-          properties:
-            self:
-              type: string
-        items:
-          type: array
-          items:
-            $ref: '#/components/schemas/DeviceRecord'
-        paging:
-          type: object
-          properties:
-            offset:
-              type: integer
-            limit:
-              type: integer
-            count:
-              type: integer
-            pages:
-              type: integer
   securitySchemes:
     basicAuth:
       type: http
