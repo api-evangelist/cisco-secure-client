@@ -1,4 +1,4 @@
-# Cisco Secure Client (cisco-secure-client)
+# Cisco Secure Client
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,142 +66,149 @@
 
 Cisco Secure Client (formerly AnyConnect) is the unified endpoint agent for Cisco security and connectivity, delivering VPN, Zero Trust Network Access, endpoint posture, network visibility, and secure web access from a single installer. Programmatic interfaces are exposed indirectly through Cisco Secure Firewall (ASA, FTD), Cisco Identity Services Engine (ISE), Cisco Secure Access, Umbrella, and Duo. There is no single public REST surface for the client itself; integration is achieved through profile XML packages, MDM-deployed configuration, and the management plane APIs exposed by these adjacent Cisco services.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/cisco-secure-client/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/cisco-secure-client/refs/heads/main/apis.yml)
+**Areas:** Endpoint Security · Remote Access · Security · VPN · Zero Trust
 
-## Scope
+## Cisco Secure Client on APIs.io
 
-- **Type:** Index
-- **Position:** Consumer
-- **Access:** 3rd-Party
+Everything profiled for Cisco Secure Client is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/cisco-secure-client/](https://apis.io/providers/cisco-secure-client/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (11)
 
-- Endpoint Security
-- Remote Access
-- Security
-- VPN
-- Zero Trust
+- [Cisco Secure Firewall Management Center API](https://apis.io/apis/cisco-secure-client/secure-firewall-management-api/) — The Cisco Secure Firewall Management Center API configures remote-access VPN gateways, group policies, and Secure Client profiles distributed to endpoints.…
+- [Cisco ISE ERS API](https://apis.io/apis/cisco-secure-client/ise-ers-api/) — The Cisco Identity Services Engine External RESTful Services (ERS) API manages the network access control plane that Secure Client integrates with for…
+- [Cisco Umbrella API](https://apis.io/apis/cisco-secure-client/umbrella-api/) — The Cisco Umbrella API exposes the cloud-delivered DNS, secure web gateway, and roaming protection services that integrate with the Secure Client Umbrella…
+- [Cisco Duo Admin API](https://apis.io/apis/cisco-secure-client/duo-admin-api/) — The Duo Admin API configures multi-factor authentication policies, users, groups, and integrations used by Secure Client deployments for ZTNA and adaptive…
+- [Cisco Secure Access API](https://apis.io/apis/cisco-secure-client/secure-access-api/) — The Cisco Secure Access API is the management interface for Cisco's converged SSE platform that Secure Client connects to as a SASE endpoint agent.…
+- [Cisco Secure Client Authentication API](https://apis.io/apis/cisco-secure-client/cisco-secure-client-authentication-api/) — The Authentication API from Cisco Secure Client — 2 operation(s) for authentication.
+- [Cisco Secure Client Devices API](https://apis.io/apis/cisco-secure-client/cisco-secure-client-devices-api/) — The Devices API from Cisco Secure Client — 2 operation(s) for devices.
+- [Cisco Secure Client Hosts API](https://apis.io/apis/cisco-secure-client/cisco-secure-client-hosts-api/) — The Hosts API from Cisco Secure Client — 1 operation(s) for hosts.
+- [Cisco Secure Client NetworkObjects API](https://apis.io/apis/cisco-secure-client/cisco-secure-client-networkobjects-api/) — The NetworkObjects API from Cisco Secure Client — 1 operation(s) for networkobjects.
+- [Cisco Secure Client Access Policies API](https://apis.io/apis/cisco-secure-client/cisco-secure-client-access-policies-api/) — The Access Policies API from Cisco Secure Client — 1 operation(s) for access policies.
+- [Cisco Secure Client Access Rules API](https://apis.io/apis/cisco-secure-client/cisco-secure-client-access-rules-api/) — The Access Rules API from Cisco Secure Client — 1 operation(s) for access rules.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2024-01-01
-- **Modified:** 2026-04-23
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Cisco Secure Firewall Management Center API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-The Cisco Secure Firewall Management Center API configures remote-access VPN gateways, group policies, and Secure Client profiles distributed to endpoints. Authentication uses a token generated via the generatetoken endpoint and passed as the X-auth-access-token header on subsequent calls.
+- [Cisco Secure Client Agentic Access](https://apis.io/agentic-access/cisco-secure-client/cisco-secure-client-agentic-access/)
 
-- **Human URL:** [https://developer.cisco.com/docs/secure-firewall-management-center-api/](https://developer.cisco.com/docs/secure-firewall-management-center-api/)
+#### JSON-LD (1)
 
-#### Tags
+Linked-data contexts for the provider's vocabulary.
 
-- ASA
-- Firewall
-- FTD
-- Management
-- VPN
+- [Cisco Secure Client Context](https://apis.io/jsonld/cisco-secure-client/cisco-secure-client-context/)
 
-#### Properties
+#### Collections (7)
 
-- [Documentation](https://developer.cisco.com/docs/secure-firewall-management-center-api/)
-- [Postman Collection](collections/cisco-secure-client.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/cisco-secure-client.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Postman and Open Collection request collections.
 
-### Cisco ISE ERS API
+- [Cisco Secure Firewall Management Center API (Secure Client management plane)](https://apis.io/collections/cisco-secure-client/open-cisco-secure-client/)
+- [Cisco Secure Firewall Management Center API (Secure Client management plane) AccessPolicies API](https://apis.io/collections/cisco-secure-client/open-cisco-secure-client-accesspolicies-api/)
+- [Cisco Secure Firewall Management Center API (Secure Client management plane) AccessPolicies AccessRules API](https://apis.io/collections/cisco-secure-client/open-cisco-secure-client-accessrules-api/)
+- [Cisco Secure Firewall Management Center API (Secure Client management plane) AccessPolicies Authentication API](https://apis.io/collections/cisco-secure-client/open-cisco-secure-client-authentication-api/)
+- [Cisco Secure Firewall Management Center API (Secure Client management plane) AccessPolicies Devices API](https://apis.io/collections/cisco-secure-client/open-cisco-secure-client-devices-api/)
+- [Cisco Secure Firewall Management Center API (Secure Client management plane) AccessPolicies Hosts API](https://apis.io/collections/cisco-secure-client/open-cisco-secure-client-hosts-api/)
+- [Cisco Secure Firewall Management Center API (Secure Client management plane) AccessPolicies NetworkObjects API](https://apis.io/collections/cisco-secure-client/open-cisco-secure-client-networkobjects-api/)
 
-The Cisco Identity Services Engine External RESTful Services (ERS) API manages the network access control plane that Secure Client integrates with for posture assessment and policy enforcement. Endpoints cover endpoint identity groups, posture conditions, and authorization policies.
+#### Governance rules (1)
 
-- **Human URL:** [https://developer.cisco.com/docs/identity-services-engine/](https://developer.cisco.com/docs/identity-services-engine/)
+Spectral rulesets for the provider's contracts.
 
-#### Tags
+- [Cisco Secure Client API Rules](https://apis.io/rules/cisco-secure-client/cisco-secure-client-rules/)
 
-- ERS
-- Identity
-- ISE
-- NAC
-- Posture
+#### Security (3)
 
-#### Properties
+Authentication, trust centre, and vulnerability disclosure.
 
-- [Documentation](https://developer.cisco.com/docs/identity-services-engine/)
-- [Postman Collection](collections/cisco-secure-client.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/cisco-secure-client.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Cisco Secure Client Authentication](https://apis.io/security/cisco-secure-client/cisco-secure-client-authentication/)
+- [Cisco Secure Client Domain Security](https://apis.io/security/cisco-secure-client/cisco-secure-client-domain-security/)
+- [Cisco Secure Client Vulnerability Disclosure](https://apis.io/security/cisco-secure-client/cisco-secure-client-vulnerability-disclosure/)
 
-### Cisco Umbrella API
+#### Plans and pricing (1)
 
-The Cisco Umbrella API exposes the cloud-delivered DNS, secure web gateway, and roaming protection services that integrate with the Secure Client Umbrella module. Authentication uses OAuth 2.0 client credentials and endpoints cover deployments, policies, reports, and destination lists.
+Published plans, tiers and prices.
 
-- **Human URL:** [https://developer.cisco.com/docs/cloud-security/](https://developer.cisco.com/docs/cloud-security/)
-- **Base URL:** `https://api.umbrella.com`
+- [Cisco Secure Client Plans Pricing](https://apis.io/plans/cisco-secure-client/cisco-secure-client-plans-pricing/)
 
-#### Tags
+#### Rate limits (1)
 
-- DNS
-- Roaming
-- Secure Web Gateway
-- Umbrella
+Published request limits.
 
-#### Properties
+- [Cisco Secure Client Rate Limits](https://apis.io/rate-limits/cisco-secure-client/cisco-secure-client-rate-limits/)
 
-- [Documentation](https://developer.cisco.com/docs/cloud-security/)
-- [Postman Collection](collections/cisco-secure-client.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/cisco-secure-client.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+#### FinOps (1)
 
-### Cisco Duo Admin API
+What the API costs to run, by operation.
 
-The Duo Admin API configures multi-factor authentication policies, users, groups, and integrations used by Secure Client deployments for ZTNA and adaptive authentication. Authentication uses an HMAC signature scheme over the request and integration keys.
+- [Cisco Secure Client Finops](https://apis.io/finops/cisco-secure-client/cisco-secure-client-finops/)
 
-- **Human URL:** [https://duo.com/docs/adminapi](https://duo.com/docs/adminapi)
+## Where to find this API
 
-#### Tags
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-- Authentication
-- Duo
-- MFA
-- Zero Trust
-
-#### Properties
-
-- [Documentation](https://duo.com/docs/adminapi)
-- [Postman Collection](collections/cisco-secure-client.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/cisco-secure-client.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Cisco Secure Access API
-
-The Cisco Secure Access API is the management interface for Cisco's converged SSE platform that Secure Client connects to as a SASE endpoint agent. Endpoints cover network tunnels, ZTNA application definitions, posture profiles, and reporting.
-
-- **Human URL:** [https://developer.cisco.com/docs/cloud-security/secure-access/](https://developer.cisco.com/docs/cloud-security/secure-access/)
-
-#### Tags
-
-- SASE
-- Secure Access
-- SSE
-- ZTNA
-
-#### Properties
-
-- [Documentation](https://developer.cisco.com/docs/cloud-security/secure-access/)
-- [Postman Collection](collections/cisco-secure-client.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/cisco-secure-client.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-## Common Properties
-
-- [Portal](https://developer.cisco.com/)
+- [Website](https://www.cisco.com/)
 - [Documentation](https://www.cisco.com/c/en/us/support/security/secure-client-5/series.html)
-- [Getting Started](https://developer.cisco.com/docs/secure-client/getting-started/)
-- [Changelog](https://www.cisco.com/c/en/us/td/docs/security/vpn_client/anyconnect/Cisco-Secure-Client-5/release/notes/release-notes-cisco-secure-client-5.html)
+- [Getting started](https://developer.cisco.com/docs/secure-client/getting-started/)
 - [Support](https://www.cisco.com/c/en/us/support/index.html)
-- [Status Page](https://status.cisco.com/)
-- [Community](https://community.cisco.com/)
-- [Terms of Service](https://www.cisco.com/c/en/us/about/legal/cloud-and-software/end-user-license-agreement.html)
-- [Privacy Policy](https://www.cisco.com/c/en/us/about/legal/privacy-full.html)
-- [JSON-LD](json-ld/cisco-secure-client-context.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
-- [Spectral Rules](rules/cisco-secure-client-rules.yml) — [Spectral](https://docs.stoplight.io/docs/spectral)
+- [Changelog](https://www.cisco.com/c/en/us/td/docs/security/vpn_client/anyconnect/Cisco-Secure-Client-5/release/notes/release-notes-cisco-secure-client-5.html)
+- [Blog](https://blogs.cisco.com/tag/anyconnect/feed)
+- [Terms of service](https://www.cisco.com/c/en/us/about/legal/cloud-and-software/end-user-license-agreement.html)
+- [Privacy policy](https://www.cisco.com/c/en/us/about/legal/privacy-full.html)
+- [Status](https://status.cisco.com/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 31.6** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 57.1 |
+| Contract quality | 48.1 |
+| Contract governance | 11.4 |
+| Operational transparency | 15.8 |
+| Developer ergonomics | 28.6 |
+| Access clarity | 18.4 |
+
+**Agent readiness 17.9** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 26.5** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/cisco-secure-client/](https://apis.io/providers/cisco-secure-client/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Cisco Secure Client: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/cisco-secure-client/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
